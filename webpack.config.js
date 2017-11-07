@@ -26,8 +26,8 @@ module.exports = {
     },
     resolve: {
         modules: [
-          path.resolve('./src/components'),
-          path.resolve('./node_modules')
+          path.resolve(__dirname, 'src/components'),
+          path.resolve(__dirname, 'node_modules')
         ]
       },
     plugins: [
