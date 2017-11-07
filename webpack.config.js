@@ -5,6 +5,8 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 })
 
+const path = require('path');
+
 module.exports = {
     entry: "./src/index.js",
     output: {
@@ -22,6 +24,12 @@ module.exports = {
 
         ]
     },
+    resolve: {
+        modules: [
+          path.resolve('./src/components'),
+          path.resolve('./node_modules')
+        ]
+      },
     plugins: [
         HtmlWebpackPluginConfig
     ]
