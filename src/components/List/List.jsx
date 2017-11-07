@@ -4,13 +4,15 @@ import getList from '../../services/getList';
 
 import Item from 'List/Item.jsx';
 
+const list = getList(listApi);
+
 export default function List() {
 
     return (
       <ul>
-        {getList(listApi).map(function(item, i){
-          return <Item key={i} item={item}/>
-        })}
+        {list.map((item) =>
+          <Item key={item} item={item}/>
+        )}
       </ul>
     );
 }
