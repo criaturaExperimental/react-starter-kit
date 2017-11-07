@@ -1,6 +1,6 @@
 import React from 'react';
-import listApi from '../data/list.json';
-import getList from '../services/getList';
+import listApi from '../../data/list.json';
+import getList from '../../services/getList';
 
 export default function List() {
 
