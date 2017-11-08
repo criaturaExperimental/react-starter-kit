@@ -2,8 +2,8 @@ import React from 'react';
 import CourseCard from 'CourseCard/CourseCard.jsx';
 
 
-export default function Item() {
+export default function Item(props) {
   return (
-    <CourseCard />
+    <CourseCard item={props.item} />
   )
 }
