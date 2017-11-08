@@ -1,11 +1,9 @@
 import React from 'react';
-import pluckTitle from '../../helpers/babbler';
+import CourseCard from 'CourseCard/CourseCard.jsx';
 
-export default function Item(props) {
+
+export default function Item() {
   return (
-    <li>{
-      `${pluckTitle().first}
-      ${props.item} breeding ${pluckTitle().second}`
-    }</li>
+    <CourseCard />
   )
 }
