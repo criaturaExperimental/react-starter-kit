@@ -11,7 +11,20 @@ header{
 ul{
   list-style: none;
   li{
-    margin: 2%;
+    margin: 0 4% 2% 0;
+    padding: 2%;
+    background-color: rgba(63, 162, 106, 0.435);
+    border-radius: 10px;
+    h4{
+      margin: 1% 0;
+    }
+    .course-payment{
+      display: grid;
+      justify-content: left;
+      button{
+        width: 50px;
+      }
+    }
   }
 }
 aside{

@@ -8,12 +8,10 @@ export default function CourseCard(props) {
       <h4>
         {`${pluckTitle().first} ${props.item} breeding ${pluckTitle().second}`}
       </h4>
-      <div>
-        { pluckPrice() }
+      <div className="course-payment">
+        <span>{ pluckPrice() }</span>
+        <button>Buy</button>
       </div>
-      <button>
-        Buy
-      </button>
     </li>
   )
 }
