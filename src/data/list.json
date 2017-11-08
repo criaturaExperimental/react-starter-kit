@@ -1,14 +1,11 @@
 {
     "message": {
         "affenpinscher": [],
-        "african": [],
         "airedale": [],
         "akita": [],
         "appenzeller": [],
-        "basenji": [],
         "beagle": [],
         "bluetick": [],
-        "borzoi": [],
         "bouvier": [],
         "boxer": [],
         "brabancon": [],
@@ -45,7 +42,6 @@
             "norwegian"
         ],
         "entlebucher": [],
-        "eskimo": [],
         "germanshepherd": [],
         "greyhound": [
             "italian"
