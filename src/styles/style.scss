@@ -19,10 +19,10 @@ ul{
       margin: 1% 0;
     }
     .course-payment{
-      display: grid;
-      justify-content: left;
+      display: flex;
       button{
         width: 50px;
+        margin-left: 10px;
       }
     }
   }
