@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(224, 227, 199);
+  background-color: #e0e3c7;
 }
 header{
   width: 70vw;
@@ -7,4 +7,18 @@ header{
   h1{
     margin-bottom: 2%;
   }
+}
+ul{
+  list-style: none;
+  li{
+    margin: 2%;
+  }
+}
+aside{
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 2%;
+  background-color: rgba(83, 135, 38, 0.498);
+  border-radius: 0 0 0 20px;
 }
