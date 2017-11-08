@@ -11,7 +11,7 @@ export default function CourseCard(props) {
       </h4>
       <div className="course-payment">
         <span>{ pluckPrice() }</span>
-        <button>Buy</button>
+        <button value={null} onClick={props.onClick}>Buy</button>
       </div>
     </li>
   )
