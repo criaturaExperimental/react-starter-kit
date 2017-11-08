@@ -1,6 +1,5 @@
 import React from 'react';
 import pluckTitle from '../../helpers/babbler';
-import pluckPrice from '../../helpers/pricer';
 import capitalizer from '../../helpers/capitalizer';
 
 export default function CourseCard(props) {
@@ -10,8 +9,8 @@ export default function CourseCard(props) {
         {`${pluckTitle().first} ${capitalizer(props.item)} breeding ${pluckTitle().second}`}
       </h4>
       <div className="course-payment">
-        <span>{ pluckPrice() }</span>
-        <button value={null} onClick={props.onClick}>Buy</button>
+        <span>{ props.price }</span>
+        <button value={props.price} onClick={props.onClick}>Buy</button>
       </div>
     </li>
   )
