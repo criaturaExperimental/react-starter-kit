@@ -3,7 +3,8 @@ import React from 'react';
 export default function CheckoutBasket(props) {
   return (
     <aside>
-      Hello checkout
+      <span>Courses </span>
+      {props.courses.length}
     </aside>
   )
 }
