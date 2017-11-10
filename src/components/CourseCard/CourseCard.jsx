@@ -9,8 +9,8 @@ export default function CourseCard(props) {
         {`${pluckTitle().first} ${capitalizer(props.item)} breeding ${pluckTitle().second}`}
       </h4>
       <div className="course-payment">
-        <span>{ props.price }</span>
-        <button value={props.price} onClick={props.onClick}>Buy</button>
+        <span>${ props.price }</span>
+        <button value={ props.price } onClick={ ()=> props.onClick(props.price) }>Buy</button>
       </div>
     </li>
   )

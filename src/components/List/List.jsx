@@ -1,24 +1,19 @@
 import React from 'react';
 
-import listApi from '../../data/list.json';
-import getList from '../../services/getList';
-import pricePlucker from '../../helpers/pricer';
-
 import Item from 'List/Item.jsx';
 
-const list = getList(listApi);
-
-export default function List() {
+export default function List(props) {
 
     return (
       <ul>
-        {list.map((item) =>
-          <Item
-            key = {item}
-            item = {item}
-            price = {pricePlucker()}
-          />
-        )}
+      {props.list.map((item, i) =>
+        <Item
+          key = { item }
+          item = { item }
+          price = { props.prices[i] }
+          onClick = { props.onClick }
+        />
+      )}
       </ul>
     );
 }
