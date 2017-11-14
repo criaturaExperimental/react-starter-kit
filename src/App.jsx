@@ -22,7 +22,12 @@ class App extends React.Component {
     }
   }
    handleClick(price){
-    console.log(price);
+    console.log(this.state.selectedCourses);
+    let nextCourse = this.state.selectedCourses;
+    nextCourse.push(price);
+    this.setState({
+      selectedCourses: nextCourse
+    })
    }
 
   render(){
@@ -35,7 +40,7 @@ class App extends React.Component {
         <List
             list = { list }
             prices = { prices }
-            onClick = { (price) => this.handleClick( price ) }
+            onClick = { (data) => this.handleClick( data ) }
         />
         <CheckoutBasket courses={this.state.selectedCourses}/>
       </main>

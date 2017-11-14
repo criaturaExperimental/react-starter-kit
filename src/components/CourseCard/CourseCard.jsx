@@ -10,7 +10,7 @@ export default function CourseCard(props) {
       </h4>
       <div className="course-payment">
         <span>${ props.price }</span>
-        <button value={ props.price } onClick={ ()=> props.onClick(props.price) }>Buy</button>
+        <button value={ props.price } onClick={ ()=> props.onClick({price: props.price, title: props.item}) }>Buy</button>
       </div>
     </li>
   )
