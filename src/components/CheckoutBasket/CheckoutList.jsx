@@ -1,10 +1,11 @@
 import React from 'react';
+import capitalizer from '../../helpers/capitalizer';
 
 export default function CheckoutList(props) {
   return (
     <ul>
       {  props.courses.map((item) =>
-        <li>{ `${item.title}: ${item.price}` }</li>
+        <li key={`${item.title} course`}>{ `${capitalizer(item.title)}: ${item.price}` }</li>
       )}
     </ul>
   )

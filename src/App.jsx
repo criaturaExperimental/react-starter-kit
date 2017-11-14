@@ -19,15 +19,25 @@ class App extends React.Component {
     super(props);
     this.state = {
         selectedCourses: [],
+        totalPrice: 0
     }
   }
-   handleClick(price){
+   handleClick(courseData){
     console.log(this.state.selectedCourses);
     let nextCourse = this.state.selectedCourses;
-    nextCourse.push(price);
+    nextCourse.push(courseData);
+    let newPrice = this.state.totalPrice;
+    newPrice += courseData.price
     this.setState({
-      selectedCourses: nextCourse
+      selectedCourses: nextCourse,
+      totalPrice: newPrice
     })
+   }
+
+   totalPrice(){
+     let cost = this.state.selectedCourses;
+     let total = 0;
+     cost.map((course) => total += course.price)
    }
 
   render(){
@@ -42,7 +52,7 @@ class App extends React.Component {
             prices = { prices }
             onClick = { (data) => this.handleClick( data ) }
         />
-        <CheckoutBasket courses={this.state.selectedCourses}/>
+        <CheckoutBasket courses={this.state.selectedCourses} totalPrice={this.state.totalPrice}/>
       </main>
     )
   }
