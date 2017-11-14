@@ -15,13 +15,24 @@ import listProcessed from './helpers/listProcessed';
 const list = getList(listApi);
 
 class App extends React.Component {
+
   constructor(props){
     super(props);
     this.state = {
+        list: null,
+        prices: null,
         selectedCourses: [],
         totalPrice: 0
     }
   }
+
+  componentWillMount(){
+    this.setState({
+      list: listProcessed(listApi),
+      prices: pricePlucker(list)
+    })
+  }
+
    handleClick(courseData){
     console.log(this.state.selectedCourses);
     let nextCourse = this.state.selectedCourses;
@@ -34,22 +45,13 @@ class App extends React.Component {
     })
    }
 
-   totalPrice(){
-     let cost = this.state.selectedCourses;
-     let total = 0;
-     cost.map((course) => total += course.price)
-   }
-
   render(){
-    const list = listProcessed(listApi);
-    const prices = pricePlucker(list);
-
     return (
       <main>
         <Header />
         <List
-            list = { list }
-            prices = { prices }
+            list = { this.state.list }
+            prices = { this.state.prices }
             onClick = { (data) => this.handleClick( data ) }
         />
         <CheckoutBasket courses={this.state.selectedCourses} totalPrice={this.state.totalPrice}/>
