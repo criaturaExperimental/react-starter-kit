@@ -4,8 +4,8 @@ import capitalizer from '../../helpers/capitalizer';
 export default function CheckoutList(props) {
   return (
     <ul>
-      {  props.courses.map((item) =>
-        <li key={item.title}>{ `${capitalizer(item.title)}: ${item.price}` }</li>
+      {  props.courses.map((item, i) =>
+        <li key={`${item.title} ${i}`}>{ `${capitalizer(item.title)}: ${item.price}` }</li>
       )}
     </ul>
   )

@@ -12,8 +12,8 @@ import getList from './services/getList';
 import pricePlucker from './helpers/pricer';
 import applyTitle from './helpers/titler';
 
-let list = getList(listApi);  /*?*/
-list = applyTitle(list)  /*?*/
+let list = getList(listApi);
+list = applyTitle(list);
 
 class App extends React.Component {
 
@@ -28,13 +28,12 @@ class App extends React.Component {
   }
 
    handleClick(courseData){
-    console.log(this.state.selectedCourses);
-    let nextCourse = this.state.selectedCourses;
-    nextCourse.push(courseData);
+    let checkoutCourses = this.state.selectedCourses;
+    checkoutCourses.push(courseData);
     let newPrice = this.state.totalPrice;
     newPrice += courseData.price;
     this.setState({
-      selectedCourses: nextCourse,
+      selectedCourses: checkoutCourses,
       totalPrice: newPrice
     })
    }
