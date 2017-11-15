@@ -10,16 +10,17 @@ import CheckoutBasket from 'CheckoutBasket/CheckoutBasket.jsx';
 import listApi from './data/list.json';
 import getList from './services/getList';
 import pricePlucker from './helpers/pricer';
-import listProcessed from './helpers/listProcessed';
+import applyTitle from './helpers/titler';
 
-const list = getList(listApi);
+let list = getList(listApi);  /*?*/
+list = applyTitle(list)  /*?*/
 
 class App extends React.Component {
 
   constructor(props){
     super(props);
     this.state = {
-        list: listProcessed(listApi),
+        list: list,
         prices: pricePlucker(list),
         selectedCourses: [],
         totalPrice: 0

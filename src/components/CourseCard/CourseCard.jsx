@@ -6,7 +6,7 @@ export default function CourseCard(props) {
   return(
     <li>
       <h4>
-        {`${pluckTitle().first} ${capitalizer(props.item)} breeding ${pluckTitle().second}`}
+        {props.item}
       </h4>
       <div className="course-payment">
         <span>${ props.price }</span>
