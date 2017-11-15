@@ -19,18 +19,11 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-        list: null,
-        prices: null,
+        list: listProcessed(listApi),
+        prices: pricePlucker(list),
         selectedCourses: [],
         totalPrice: 0
     }
-  }
-
-  componentWillMount(){
-    this.setState({
-      list: listProcessed(listApi),
-      prices: pricePlucker(list)
-    })
   }
 
    handleClick(courseData){
@@ -38,7 +31,7 @@ class App extends React.Component {
     let nextCourse = this.state.selectedCourses;
     nextCourse.push(courseData);
     let newPrice = this.state.totalPrice;
-    newPrice += courseData.price
+    newPrice += courseData.price;
     this.setState({
       selectedCourses: nextCourse,
       totalPrice: newPrice

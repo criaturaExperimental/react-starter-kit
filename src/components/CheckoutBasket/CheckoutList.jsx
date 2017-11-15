@@ -5,7 +5,7 @@ export default function CheckoutList(props) {
   return (
     <ul>
       {  props.courses.map((item) =>
-        <li key={`${item.title} course`}>{ `${capitalizer(item.title)}: ${item.price}` }</li>
+        <li key={item.title}>{ `${capitalizer(item.title)}: ${item.price}` }</li>
       )}
     </ul>
   )
