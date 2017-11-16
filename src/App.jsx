@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-require('./styles/style.scss');
+// require('./styles/style.scss');
+import { injectGlobal } from 'styled-components';
 
 import List from 'List/List.jsx';
 import Header from 'Header.jsx';
@@ -52,5 +53,13 @@ class App extends React.Component {
     )
   }
 }
+
+// GLOBAL STYLES
+injectGlobal`
+  body {
+    background-color: ghostwhite;
+    font-family: cursive;
+  }
+`
 
 ReactDOM.render(<App />, document.getElementById('root'));
