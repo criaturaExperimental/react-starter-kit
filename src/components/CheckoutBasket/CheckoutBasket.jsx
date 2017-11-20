@@ -1,14 +1,16 @@
 import React from 'react';
 import CheckoutList from 'CheckoutBasket/CheckoutList.jsx';
+import { StyledCheckoutBasket } from "../../sytledComponents/checkout";
+
 
 export default function CheckoutBasket(props) {
   return (
-    <aside>
+    <StyledCheckoutBasket>
       <span>Courses </span>
       {props.courses.length}
       <CheckoutList courses={ props.courses }/>
       <span>Total price </span>
       {props.totalPrice}
-    </aside>
+    </StyledCheckoutBasket>
   )
 }
