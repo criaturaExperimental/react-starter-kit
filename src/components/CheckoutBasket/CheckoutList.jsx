@@ -7,7 +7,7 @@ export default function CheckoutList(props) {
       {  props.courses.map((item, i) =>
         <li className="fadeIn" key={`${item.title} ${i}`}>
           { `${capitalizer(item.title)}: ${item.price}` }
-          <button onClick = { props.onClick } >X</button>
+          <button onClick = { () => props.onClick(item.price) } >X</button>
         </li>
       )}
     </ul>

@@ -39,8 +39,16 @@ class App extends React.Component {
     })
    }
 
-   removeCourse(courseData){
-     alert('yeah1');
+   removeCourse(coursePrice){
+    let checkoutCourses = this.state.selectedCourses;
+    const index = checkoutCourses.indexOf(coursePrice.target);
+    checkoutCourses.splice(index, 1);
+    let newPrice = this.state.totalPrice;
+    newPrice -= coursePrice;
+    this.setState({
+      selectedCourses: checkoutCourses,
+      totalPrice: newPrice
+    })
    }
 
   render(){
