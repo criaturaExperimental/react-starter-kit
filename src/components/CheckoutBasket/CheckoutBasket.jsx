@@ -8,7 +8,10 @@ export default function CheckoutBasket(props) {
     <StyledCheckoutBasket>
       <span>Courses </span>
       {props.courses.length}
-      <CheckoutList courses={ props.courses }/>
+      <CheckoutList
+        courses={ props.courses }
+        onClick = { props.onClick }
+      />
       <span>Total price </span>
       {props.totalPrice}
     </StyledCheckoutBasket>

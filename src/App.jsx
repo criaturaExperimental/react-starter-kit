@@ -28,7 +28,7 @@ class App extends React.Component {
     }
   }
 
-   handleClick(courseData){
+   addCourse(courseData){
     let checkoutCourses = this.state.selectedCourses;
     checkoutCourses.push(courseData);
     let newPrice = this.state.totalPrice;
@@ -39,16 +39,24 @@ class App extends React.Component {
     })
    }
 
+   removeCourse(courseData){
+     alert('yeah1');
+   }
+
   render(){
     return (
       <main>
         <Header />
         <List
-            list = { this.state.list }
-            prices = { this.state.prices }
-            onClick = { (data) => this.handleClick( data ) }
+          list = { this.state.list }
+          prices = { this.state.prices }
+          onClick = { (data) => this.addCourse( data ) }
         />
-        <CheckoutBasket courses={this.state.selectedCourses} totalPrice={this.state.totalPrice}/>
+        <CheckoutBasket
+          courses={this.state.selectedCourses}
+          totalPrice={this.state.totalPrice}
+          onClick = { (data) => this.removeCourse( data ) }
+        />
       </main>
     )
   }
