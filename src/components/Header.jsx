@@ -1,9 +1,10 @@
 import React from 'react';
+import { StyledHeader } from '../sytledComponents/header';
 
 export default function Header() {
   return (
-    <header>
-      <h1>Learn0 app</h1>
-    </header>
+    <StyledHeader>
+      <h1>Learn-0-matic</h1>
+    </StyledHeader>
   )
 }
