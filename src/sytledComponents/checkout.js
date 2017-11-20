@@ -10,7 +10,7 @@ to {
 `;
 
 export const StyledCheckoutBasket = styled.aside`
-  width: 30%;
+  width: 35%;
   position: fixed;
   top: 0;
   right: 0;
@@ -19,6 +19,15 @@ export const StyledCheckoutBasket = styled.aside`
   border-radius: 0 0 0 20px;
   .fadeIn{
     animation: ${fadeIn} .3s linear;
+  }
+  ul{
+    padding-left: 4%;
+    li{
+      list-style: none;
+      button{
+        margin-left: 10px;
+      }
+    }
   }
 `;
 
