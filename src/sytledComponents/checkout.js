@@ -1,14 +1,5 @@
 import styled, {keyframes} from 'styled-components';
 
-const fadeIn = keyframes`
-from {
-  opacity: .2;
-}
-to {
-  opacity: 1;
-}
-`;
-
 export const StyledCheckoutBasket = styled.aside`
   width: 35%;
   position: fixed;
@@ -17,9 +8,6 @@ export const StyledCheckoutBasket = styled.aside`
   padding: 2%;
   background-color: rgba(83, 135, 38, 0.8);
   border-radius: 0 0 0 20px;
-  .fadeIn{
-    animation: ${fadeIn} .3s linear;
-  }
   ul{
     padding-left: 4%;
     li{
@@ -28,6 +16,23 @@ export const StyledCheckoutBasket = styled.aside`
         margin-left: 10px;
       }
     }
+  }
+  .animate-enter {
+    opacity: 0.01;
+  }
+
+  .animate-enter.animate-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms ease-in;
+  }
+
+  .animate-leave {
+    opacity: 1;
+  }
+
+  .animate-leave.animate-leave-active {
+    opacity: 0.01;
+    transition: opacity 500ms ease-in;
   }
 `;
 
