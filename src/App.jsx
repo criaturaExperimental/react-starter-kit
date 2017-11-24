@@ -39,9 +39,9 @@ class App extends React.Component {
     })
    }
 
-   removeCourse(coursePrice){
+   removeCourse(coursePrice, courseTitle){
     let checkoutCourses = this.state.selectedCourses;
-    const index = checkoutCourses.indexOf(coursePrice.target);
+    let index = checkoutCourses.findIndex(item => item.title == courseTitle);
     checkoutCourses.splice(index, 1);
     let newPrice = this.state.totalPrice;
     newPrice -= coursePrice;
@@ -63,7 +63,7 @@ class App extends React.Component {
         <CheckoutBasket
           courses={this.state.selectedCourses}
           totalPrice={this.state.totalPrice}
-          onClick = { (data) => this.removeCourse( data ) }
+          onClick = { (price, title) => this.removeCourse( price, title ) }
         />
       </main>
     )
