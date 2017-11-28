@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --port 8013"
+    "start": "webpack-dev-server --port 8013",
+    "test": "karma start",
+    "watch:test": "npm test -- --auto-watch --no-single-run"
   },
   "author": "lucas degomez",
   "license": "ISC",
