@@ -23,13 +23,15 @@ class App extends React.Component {
     this.state = {
         list: list,
         prices: pricePlucker(list),
-        selectedCourses: [],
+        selectedCourses: Array(0),
         totalPrice: 0
-    }
+    };
+    this.addCourse = this.addCourse.bind(this);
+    this.removeCourse = this.removeCourse.bind(this);
   }
 
    addCourse(courseData){
-    let checkoutCourses = this.state.selectedCourses;
+    let checkoutCourses = this.state.selectedCourses.slice();
     checkoutCourses.push(courseData);
     let newPrice = this.state.totalPrice;
     newPrice += courseData.price;
@@ -39,12 +41,12 @@ class App extends React.Component {
     })
    }
 
-   removeCourse(coursePrice, courseTitle){
-    let checkoutCourses = this.state.selectedCourses;
-    let index = checkoutCourses.findIndex(item => item.title == courseTitle);
+  // split functionality one for the price another one for the list item
+   removeCourse(index, price){
+    let checkoutCourses = this.state.selectedCourses.slice();
     checkoutCourses.splice(index, 1);
     let newPrice = this.state.totalPrice;
-    newPrice -= coursePrice;
+    newPrice -= price;
     this.setState({
       selectedCourses: checkoutCourses,
       totalPrice: newPrice
@@ -63,7 +65,7 @@ class App extends React.Component {
         <CheckoutBasket
           courses={this.state.selectedCourses}
           totalPrice={this.state.totalPrice}
-          onClick = { (price, title) => this.removeCourse( price, title ) }
+          onClick = { (index, price) => this.removeCourse( index, price ) }
         />
       </main>
     )
