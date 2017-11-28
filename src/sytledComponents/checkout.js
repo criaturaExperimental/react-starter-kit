@@ -17,13 +17,16 @@ export const StyledCheckoutBasket = styled.aside`
       }
     }
   }
+
   .animate-enter {
     opacity: 0.01;
+    transform: translate(0, 1em);
   }
 
   .animate-enter.animate-enter-active {
     opacity: 1;
-    transition: opacity 1000ms ease-in;
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+    transform:translate(0,0);
   }
 
   .animate-leave {
@@ -32,7 +35,8 @@ export const StyledCheckoutBasket = styled.aside`
 
   .animate-leave.animate-leave-active {
     opacity: 0.01;
-    transition: opacity 500ms ease-in;
+    transition: opacity 500ms ease-in, transform 300ms ease-in;
+    transform:translate(-5em, 0) scale(0,0);
   }
 `;
 
